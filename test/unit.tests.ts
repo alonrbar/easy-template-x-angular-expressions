@@ -1,5 +1,5 @@
 import { Tag } from 'easy-template-x';
-import { resolver } from 'src/index';
+import { createResolver } from 'src/index';
 
 describe('unit tests', () => {
 
@@ -10,7 +10,6 @@ describe('unit tests', () => {
             rawText: null,
             xmlTextNode: null
         };
-        const path = [tag];
         const data = {
             person: {
                 name: {
@@ -19,7 +18,12 @@ describe('unit tests', () => {
                 }
             }
         };
-        const value = resolver(path, data);
+        const resolver = createResolver();
+        const value = resolver({
+            path: [tag],
+            strPath: [tag.name],
+            data: data,
+        });
         expect(value).toEqual("Alon");
     });
 
@@ -30,7 +34,6 @@ describe('unit tests', () => {
             rawText: null,
             xmlTextNode: null
         };
-        const path = [tag];
         const data = {
             people: [
                 {
@@ -47,7 +50,12 @@ describe('unit tests', () => {
                 }
             ]
         };
-        const value = resolver(path, data);
+        const resolver = createResolver();
+        const value = resolver({
+            path: [tag],
+            strPath: [tag.name],
+            data: data,
+        });
         expect(value).toEqual("Alon");
     });
 
@@ -58,7 +66,6 @@ describe('unit tests', () => {
             rawText: null,
             xmlTextNode: null
         };
-        const path = [tag];
         const data = {
             person: {
                 name: {
@@ -67,7 +74,64 @@ describe('unit tests', () => {
                 }
             }
         };
-        const value = resolver(path, data);
+        const resolver = createResolver();
+        const value = resolver({
+            path: [tag],
+            strPath: [tag.name],
+            data: data,
+        });
+        expect(value).toEqual(true);
+    });
+
+    it('works with no required prefix', () => {
+        const tag: Tag = {
+            name: "person.name.lastName === 'Bar'",
+            disposition: null,
+            rawText: null,
+            xmlTextNode: null
+        };
+        const data = {
+            person: {
+                name: {
+                    firstName: "Alon",
+                    lastName: "Bar"
+                }
+            }
+        };
+        const resolver = createResolver({
+            requiredPrefix: false
+        });
+        const value = resolver({
+            path: [tag],
+            strPath: [tag.name],
+            data: data,
+        });
+        expect(value).toEqual(true);
+    });
+
+    it('works with custom required prefix', () => {
+        const tag: Tag = {
+            name: "*** person.name.lastName === 'Bar'",
+            disposition: null,
+            rawText: null,
+            xmlTextNode: null
+        };
+        const data = {
+            person: {
+                name: {
+                    firstName: "Alon",
+                    lastName: "Bar"
+                }
+            }
+        };
+        const resolver = createResolver({
+            requiredPrefix: "***"
+        });
+        const value = resolver({
+            path: [tag],
+            strPath: [tag.name],
+            data: data,
+        });
         expect(value).toEqual(true);
     });
 });
