@@ -15,6 +15,11 @@ export class AngularResolver {
     constructor(options?: ResolverOptions) {
         this.options = new ResolverOptions(options);
         this.fallback = this.options.defaultFallback ? ScopeData.defaultResolver : undefinedResolver;
+
+        // Configure 'angular-expressions' filters.
+        for (const key of Object.keys(this.options.angularFilters || {})) {
+            expressions.filters[key] = this.options.angularFilters[key];
+        }
     }
 
     public resolve(args: ScopeDataArgs): TemplateContent | TemplateData[] {

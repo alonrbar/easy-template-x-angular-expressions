@@ -1,4 +1,7 @@
 import { defaultPathFilter, PathFilter } from './pathFilter';
+import { IMap } from './types';
+
+export type AngularFilter = (value: any) => any;
 
 export class ResolverOptions {
     /**
@@ -28,6 +31,13 @@ export class ResolverOptions {
      * Default: true
      */
     public defaultFallback?= true;
+    /**
+     * Map of Angular filters.
+     *
+     * **Notice**: The filters are global. That is, filters of one Resolver may
+     * override filters of another Resolver.
+     */
+    public angularFilters?: IMap<AngularFilter> = {};
 
     constructor(initial?: Partial<ResolverOptions>) {
         Object.assign(this, initial);

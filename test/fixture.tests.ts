@@ -2,13 +2,17 @@ import { TemplateHandler } from 'easy-template-x';
 import * as fs from 'fs';
 import { createResolver } from 'src';
 import { removeDuplicateWhitespace } from './testUtils';
-const expressions = require('angular-expressions');
 
 describe('fixture tests', () => {
 
     it('works as expected', async () => {
         const handler = new TemplateHandler({
-            scopeDataResolver: createResolver()
+            scopeDataResolver: createResolver({
+                angularFilters: {
+                    upper: (input: string) => (input || "").toUpperCase(),
+                    lower: (input: string) => (input || "").toLowerCase()
+                }
+            })
         });
         const template = fs.readFileSync("./test/fixtures/test.docx");
         const templateText = await handler.getText(template);
@@ -41,8 +45,6 @@ describe('fixture tests', () => {
             ]
         };
 
-        expressions.filters.upper = (input: string) => (input || "").toUpperCase();
-        expressions.filters.lower = (input: string) => (input || "").toLowerCase();
         const doc = await handler.process(template, data);
 
         const docText = await handler.getText(doc);
