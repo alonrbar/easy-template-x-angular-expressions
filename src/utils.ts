@@ -11,5 +11,5 @@ export function isObject(value: unknown): value is object {
  * Naive string escaping.
  */
 export function strEscape(str: string): string {
-    return str.replace(/\"/g, '\\"');
+    return (str || "").replace(/\"/g, '\\"');
 }
