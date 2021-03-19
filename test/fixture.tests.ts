@@ -4,37 +4,36 @@ import { createResolver } from 'src';
 import { removeDuplicateWhitespace } from './testUtils';
 const expressions = require('angular-expressions');
 
-describe('unit tests', () => {
+describe('fixture tests', () => {
 
-    it('works on templates', async () => {
+    it('works as expected', async () => {
         const handler = new TemplateHandler({
             scopeDataResolver: createResolver()
         });
         const template = fs.readFileSync("./test/fixtures/test.docx");
         const templateText = await handler.getText(template);
         expect(removeDuplicateWhitespace(templateText)).toEqual([
-            "{#my loop}",
-            "{#$myCondition == 1}",
-            "Condition is 1",
+            "{# myLoop}",
+            "{# casing == “upper”}",
+            "{item.name | upper}",
             "{/}",
-            "{#$myCondition == 2}",
-            "Condition is 2",
+            "{# casing == “lower”}",
+            "{item.name | lower}",
             "{/}",
-            "{$item.name | upper}",
             "----",
             "{/}"
         ].join(""));
 
         const data = {
-            "my loop":[
+            "myLoop":[
                 {
-                    myCondition: 1,
+                    casing: "upper",
                     item: {
                         name: "Bla"
                     }
                 },
                 {
-                    myCondition: 2,
+                    casing: "lower",
                     item: {
                         name: "Some"
                     }
@@ -43,15 +42,14 @@ describe('unit tests', () => {
         };
 
         expressions.filters.upper = (input: string) => (input || "").toUpperCase();
+        expressions.filters.lower = (input: string) => (input || "").toLowerCase();
         const doc = await handler.process(template, data);
 
         const docText = await handler.getText(doc);
         expect(removeDuplicateWhitespace(docText)).toEqual([
-            "Condition is 1",
             "BLA",
             "----",
-            "Condition is 2",
-            "SOME",
+            "some",
             "----",
         ].join(""));
 
