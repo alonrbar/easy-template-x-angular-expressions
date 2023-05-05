@@ -15,7 +15,7 @@ import { createResolver } from "easy-template-x-angular-expressions"
 
 const handler = new TemplateHandler({
     scopeDataResolver: createResolver({
-        filters: {
+        angularFilters: {
             upper: (input: string) => (input || "").toUpperCase(),
             lower: (input: string) => (input || "").toLowerCase()
         }
