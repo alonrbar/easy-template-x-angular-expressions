@@ -1,7 +1,8 @@
-import { ScopeData, ScopeDataArgs, ScopeDataResolver, TemplateContent, TemplateData } from 'easy-template-x';
-import { ResolveError } from './resolveError';
-import { ResolverOptions } from './resolverOptions';
-import { isNumber, isObject } from './utils';
+import { ScopeData } from "easy-template-x";
+import { ResolveError } from "./resolveError";
+import { ResolverOptions } from "./resolverOptions";
+import { isNumber, isObject } from "./utils";
+import type { ScopeDataArgs, ScopeDataResolver, TemplateContent, TemplateData } from 'easy-template-x';
 const expressions = require('angular-expressions');
 const getProp = require("lodash.get");
 
