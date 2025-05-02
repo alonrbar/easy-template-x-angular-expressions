@@ -1,6 +1,6 @@
 {
   "name": "easy-template-x-angular-expressions",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Angular expressions support for easy-template-x",
   "keywords": [
     "easy-template-x",
@@ -20,8 +20,8 @@
   "author": "Alon Bar",
   "license": "MIT",
   "type": "module",
-  "main": "dist/cjs/easy-template-x-angular-expressions.js",
-  "module": "dist/es/easy-template-x-angular-expressions.js",
+  "main": "dist/cjs/easy-template-x-angular-expressions.cjs",
+  "module": "dist/es/easy-template-x-angular-expressions.mjs",
   "typings": "dist/types/index.d.ts",
   "exports": {
     "require": {

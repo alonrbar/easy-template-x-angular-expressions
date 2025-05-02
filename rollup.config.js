@@ -8,11 +8,11 @@ export default {
     input: 'src/index.ts',
     output: [
         {
-            file: 'dist/cjs/easy-template-x-angular-expressions.js',
+            file: 'dist/cjs/easy-template-x-angular-expressions.cjs',
             format: 'cjs'
         },
         {
-            file: 'dist/es/easy-template-x-angular-expressions.js',
+            file: 'dist/es/easy-template-x-angular-expressions.mjs',
             format: 'es'
         }
     ],
