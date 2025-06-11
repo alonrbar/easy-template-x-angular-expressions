@@ -1385,6 +1385,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lodash.get@npm:^4.4.9":
+  version: 4.4.9
+  resolution: "@types/lodash.get@npm:4.4.9"
+  dependencies:
+    "@types/lodash": "*"
+  checksum: d7e071d267e3d1bab58db14b6ce63fc51ca3c9c9697d3548cd5c0f16c08a7ce2188cff75dff1858b5623c3bd070836857211ebef4f364c53b82e31f3190fe0b4
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:*":
+  version: 4.17.17
+  resolution: "@types/lodash@npm:4.17.17"
+  checksum: cfa34a752f3c540a196e9f92dbaff93ae15fe4058da8cce1918dd9219076dc19eec33b043aae45865e2b3ef8234a845bb57366144ec8e52551e2bc3f119e04a1
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*":
   version: 14.14.27
   resolution: "@types/node@npm:14.14.27"
@@ -2274,6 +2290,7 @@ __metadata:
     "@rollup/plugin-replace": 6.0.2
     "@types/eslint__js": 8.42.3
     "@types/jest": 29.5.14
+    "@types/lodash.get": ^4.4.9
     "@types/node": 22.13.11
     "@types/ts-nameof": 4.2.5
     "@typescript-eslint/eslint-plugin": 8.27.0
