@@ -1385,7 +1385,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash.get@npm:^4.4.9":
+"@types/lodash.get@npm:4.4.9":
   version: 4.4.9
   resolution: "@types/lodash.get@npm:4.4.9"
   dependencies:
@@ -2290,7 +2290,7 @@ __metadata:
     "@rollup/plugin-replace": 6.0.2
     "@types/eslint__js": 8.42.3
     "@types/jest": 29.5.14
-    "@types/lodash.get": ^4.4.9
+    "@types/lodash.get": 4.4.9
     "@types/node": 22.13.11
     "@types/ts-nameof": 4.2.5
     "@typescript-eslint/eslint-plugin": 8.27.0
