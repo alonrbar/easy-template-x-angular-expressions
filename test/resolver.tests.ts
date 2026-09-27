@@ -1,4 +1,4 @@
-import { Tag } from 'easy-template-x';
+import { Tag, TagPlacement } from 'easy-template-x';
 import { AngularResolver } from 'src/index';
 
 describe(nameof(AngularResolver), () => {
@@ -6,6 +6,7 @@ describe(nameof(AngularResolver), () => {
     it('resolves dotted object notation', () => {
         const tag: Tag = {
             name: "person.name.firstName",
+            placement: TagPlacement.TextNode,
             disposition: null,
             rawText: null,
             xmlTextNode: null
@@ -30,6 +31,7 @@ describe(nameof(AngularResolver), () => {
     it('resolves array index notation', () => {
         const tag: Tag = {
             name: "people[0].name.firstName",
+            placement: TagPlacement.TextNode,
             disposition: null,
             rawText: null,
             xmlTextNode: null
@@ -62,6 +64,7 @@ describe(nameof(AngularResolver), () => {
     it('resolves a condition', () => {
         const tag: Tag = {
             name: "person.name.lastName === 'Bar'",
+            placement: TagPlacement.TextNode,
             disposition: null,
             rawText: null,
             xmlTextNode: null
@@ -86,6 +89,7 @@ describe(nameof(AngularResolver), () => {
     it('works with no required prefix', () => {
         const tag: Tag = {
             name: "person.name.lastName === 'Bar'",
+            placement: TagPlacement.TextNode,
             disposition: null,
             rawText: null,
             xmlTextNode: null
@@ -112,6 +116,7 @@ describe(nameof(AngularResolver), () => {
     it('works with required prefix', () => {
         const tag: Tag = {
             name: "$ person.name.lastName === 'Bar'",
+            placement: TagPlacement.TextNode,
             disposition: null,
             rawText: null,
             xmlTextNode: null

@@ -68,7 +68,7 @@ export class AngularResolver {
         try {
             return expressions.compile(exp)(finalScope);
         } catch (e) {
-            throw new ResolveError(exp, args.strPath, e);
+            throw new ResolveError(exp, args.strPath, e as Error);
         }
     }
 }

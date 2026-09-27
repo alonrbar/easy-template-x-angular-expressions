@@ -8,16 +8,21 @@
         "declarationDir": "./dist/types",
         "outDir": "./.tmp/compiled",
         "sourceMap": true,
-        "target": "es5",
-        "module": "es2015",
+        "target": "es2022",
+        "module": "es2022",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
 
         // --- module resolution --- //
 
         "typeRoots" : ["./node_modules/@types","./src/@types"],
-        "moduleResolution": "node",
-        "baseUrl": ".",
+        "types": ["jest", "node", "ts-nameof"],
+        "moduleResolution": "bundler",
+        "paths": {
+            "src": ["./src/index.ts"],
+            "src/*": ["./src/*"],
+            "test/*": ["./test/*"]
+        },
 
         // --- validation options --- //
 
@@ -25,7 +30,7 @@
         "allowSyntheticDefaultImports": true,
         "allowUnreachableCode": false,
         "forceConsistentCasingInFileNames": true,
-        "lib": ["dom", "es2017"],
+        "lib": ["dom", "es2023"],
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "noImplicitThis": true,
@@ -34,5 +39,10 @@
         "noUnusedParameters": false,
         "skipLibCheck": true,
         "strictNullChecks": false
-    }
+    },
+    "exclude": [
+        "node_modules",
+        ".tmp",
+        "dist"
+    ]
 }
