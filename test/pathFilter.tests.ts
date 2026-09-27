@@ -1,6 +1,7 @@
+import { describe, expect, it } from 'vitest';
 import { defaultPathFilter } from 'src';
 
-describe(nameof(defaultPathFilter), () => {
+describe(defaultPathFilter, () => {
 
     it("identifies dot notation path", () => {
         expect(defaultPathFilter("obj._some.some2")).toBeTruthy();

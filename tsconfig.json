@@ -16,7 +16,7 @@
         // --- module resolution --- //
 
         "typeRoots" : ["./node_modules/@types","./src/@types"],
-        "types": ["jest", "node", "ts-nameof"],
+        "types": ["node"],
         "moduleResolution": "bundler",
         "paths": {
             "src": ["./src/index.ts"],

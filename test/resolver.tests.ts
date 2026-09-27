@@ -1,7 +1,8 @@
+import { describe, expect, it } from 'vitest';
 import { Tag, TagPlacement } from 'easy-template-x';
 import { AngularResolver } from 'src/index';
 
-describe(nameof(AngularResolver), () => {
+describe(AngularResolver, () => {
 
     it('resolves dotted object notation', () => {
         const tag: Tag = {

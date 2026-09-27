@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { TemplateHandler } from 'easy-template-x';
 import * as fs from 'fs';
 import { createResolver } from 'src';
