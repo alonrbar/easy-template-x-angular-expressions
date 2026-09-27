@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.3.0 - 2026-09-27](https://github.com/alonrbar/easy-template-x-angular-expressions/tree/v0.3.0)
+
+Dependencies update and modernization.
+
+- **BREAKING** - `easy-template-x` is now a peer dependency instead of a regular dependency.
+- Update `angular-expressions`.
+- Require Node.js >= 20.
+- Build output now targets ES2022.
+- Additional internal changes.
+
 ## [0.2.2 - 2025-06-12](https://github.com/alonrbar/easy-template-x-angular-expressions/tree/v0.2.2)
 
 - Use synthetic imports of "lodash.get" and "angular-expressions".

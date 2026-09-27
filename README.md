@@ -2,6 +2,14 @@
 
 Angular expressions support for [easy-template-x](https://github.com/alonrbar/easy-template-x).
 
+## Installation
+
+`easy-template-x` is a peer dependency, so install both packages:
+
+```bash
+yarn add easy-template-x easy-template-x-angular-expressions
+```
+
 ## Usage
 
 For basic usage and how to write `easy-template-x` templates please read the main package [docs](https://github.com/alonrbar/easy-template-x).
