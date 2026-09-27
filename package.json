@@ -54,8 +54,10 @@
   },
   "dependencies": {
     "angular-expressions": "1.7.0",
-    "easy-template-x": "^8.0.0",
     "lodash.get": "4.4.2"
+  },
+  "peerDependencies": {
+    "easy-template-x": ">=6.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.29.7",
@@ -69,6 +71,7 @@
     "@types/ts-nameof": "4.2.5",
     "babel-jest": "30.5.2",
     "babel-plugin-ts-nameof": "4.2.1",
+    "easy-template-x": "8.0.0",
     "eslint": "10.11.0",
     "jest": "30.5.2",
     "jest-junit": "17.0.0",

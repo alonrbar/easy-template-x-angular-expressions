@@ -3716,7 +3716,7 @@ __metadata:
     angular-expressions: "npm:1.7.0"
     babel-jest: "npm:30.5.2"
     babel-plugin-ts-nameof: "npm:4.2.1"
-    easy-template-x: "npm:^8.0.0"
+    easy-template-x: "npm:8.0.0"
     eslint: "npm:10.11.0"
     jest: "npm:30.5.2"
     jest-junit: "npm:17.0.0"
@@ -3728,10 +3728,12 @@ __metadata:
     rollup-plugin-node-resolve: "npm:5.2.0"
     typescript: "npm:6.0.3"
     typescript-eslint: "npm:8.70.1"
+  peerDependencies:
+    easy-template-x: ">=6.0.0"
   languageName: unknown
   linkType: soft
 
-"easy-template-x@npm:^8.0.0":
+"easy-template-x@npm:8.0.0":
   version: 8.0.0
   resolution: "easy-template-x@npm:8.0.0"
   dependencies:
